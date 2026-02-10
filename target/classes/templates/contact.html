@@ -1,0 +1,76 @@
+<section class="contact-section" id="contact" th:fragment="contact">
+    <div class="contact-container">
+        <h2 class="heading"><i class="fas fa-envelope-open-text"></i> Get In <span>Touch</span></h2>
+
+        <div class="contact-wrapper">
+            
+            <div class="contact-card let-connect-card">
+                <h3>Let's Connect</h3>
+                <p class="contact-bio">
+                    Feel free to reach out for collaborations or just to say hello! I'll try my best to get back to you!
+                </p>
+
+                <div class="contact-socials">
+                    <h4>Find me on</h4>
+                    <ul class="social-icons">
+                        <li><a class="linkedin" href="https://www.linkedin.com/in/dheeraj-kumar-jha-828ba433a/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a class="github" href="https://github.com/Dheeraj1453" target="_blank"><i class="fab fa-github"></i></a></li>
+                        <li><a class="instagram" href="https://www.instagram.com/dheeraj_08kr/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a class="gmail" href="https://mail.google.com/mail/?view=cm&to=dheeraj1453@gmail.com"><i class="fas fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-card contact-form-card">
+                <h3>Send me a Message</h3>
+
+                <div id="success-message" class="success-box" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="success-text"></span>
+                </div>
+                <div id="error-message" class="error-box" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="error-text"></span>
+                </div>
+
+                <form id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Your Name <span>*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span>*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject <span>*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-pen"></i>
+                            <input type="text" id="subject" name="subject" placeholder="Enter subject" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span>*</span></label>
+                        <div class="input-wrapper textarea-wrapper">
+                            <i class="fas fa-comment-alt"></i>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
