@@ -435,7 +435,7 @@ body {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  background: url("../images/Dheeraj.WebP") no-repeat center center;
+  background: url("../images/Dheeraj.png") no-repeat center center;
   background-size: cover;        
   background-attachment: fixed;  
 }
