@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Favicon -->
+    <link id='favicon' rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-png">
+    <title th:text="'Portfolio | '+${title}"></title>
+</head>
+
+<body>
+
+  <!-- header -->
+  <header th:insert="menu :: menu">
+  </header>
+  <!-- header end -->
+
+  <!-- homePage -->
+   <div th:if="${title == 'Home'}">
+    <div th:insert="home :: home"></div>
+   </div>
+<!-- homePage end -->
+
+  <!-- about -->
+   <div th:if="${title == 'About'}">
+    <div th:insert="about :: about"></div>
+   </div>
+<!-- about end -->
+
+  <!-- resume -->
+   <div th:if="${title == 'Resume'}">
+    <div th:insert="resume :: resume"></div>
+</div>
+<!-- resume end -->
+
+  <!-- projects -->
+   <div th:if="${title == 'Projects'}">
+    <div th:insert="project :: projects"></div> </div>
+
+<!-- projects end -->
+
+  <!-- contact -->
+   <div th:if="${title == 'Contact'}">
+    <div th:insert="contact :: contact"></div>
+   </div>
+
+<!-- homePage end -->
+
+
+  <!-- footer -->
+   <section th:insert="footer :: footer"></section>
+
+  <!-- Main JS File -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

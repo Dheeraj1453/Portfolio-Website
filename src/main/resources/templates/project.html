@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Projects</title>
+</head>
+<body>
+
+    <section class="projects-section" id="projects" th:fragment="projects">
+        
+        <h2 class="heading"><i class="fas fa-laptop-code"></i> Featured <span>Projects</span></h2>
+
+        <div class="projects-container">
+            
+          <div class="project-card fade-in-up" style="animation-delay: 0.3s;">
+            <div class="card-image">
+                <img src="assets/images/form_predictor.png" alt="Cricket Predictor" class="project-img-placeholder" />
+                <div class="card-overlay">
+                <span class="status-badge">In Progress</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Cricket Player Form Predictor</h3>
+                    <p class="project-desc">
+                        A web application that predicts whether a cricket player is currently “in form” or “out of form” using real-time data.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>Integrates third-party sports APIs to fetch live player statistics (runs, strike rate).</li>
+                        <li>Processes data through custom backend logic and RESTful services.</li>
+                        <li>Evaluates performance trends to provide accurate form predictions.</li>
+                    </ul>
+
+                    <div class="tech-stack-label">Technologies Used:</div>
+                    <div class="tech-stack">
+                        <span><i class="fab fa-java"></i> Java</span>
+                        <span><i class="fas fa-leaf"></i> Spring Boot</span>
+                        <span><i class="fas fa-globe"></i> REST APIs</span>
+                        <span><i class="fas fa-database"></i> MySQL</span>
+                        <span><i class="fas fa-layer-group"></i> Spring Data</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/Dheeraj1453/Players_Form_Predictor" target="_blank" class="btn-action github"><i class="fab fa-github"></i> Code</a>
+                        <a href="#" class="btn-action demo disabled"><i class="fas fa-tools"></i> In Progress</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in-up">
+                <div class="card-image">
+                    <img src="assets/images/Tic-Tac-Toe.png" alt="Tic-Tac-Toe Game" class="project-img-placeholder" />
+                    <div class="card-overlay">
+                        <a href="https://tic-tac-toe-game-dc5cc.web.app" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Tic-Tac-Toe Game</h3>
+                    <p class="project-desc">
+                        Developed an interactive Tic-Tac-Toe web game, allowing two players to play in real-time with instant win/draw detection.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>Designed a clean and responsive user interface for an engaging gaming experience.</li>
+                        <li>Deployed the project online for public access via Firebase Hosting.</li>
+                        <li>Implemented game logic for instant state updates.</li>
+                    </ul>
+                    
+                    <div class="tech-stack-label">Technologies Used:</div>
+                    <div class="tech-stack">
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                        <span><i class="fab fa-html5"></i> HTML5</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fas fa-fire"></i> Firebase</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/Dheeraj1453/Tic-Tac-Toe" target="_blank" class="btn-action github"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://tic-tac-toe-game-dc5cc.web.app" target="_blank" class="btn-action demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in-up" style="animation-delay: 0.1s;">
+                <div class="card-image">
+                    <img src="assets/images/myPortfolio.png" alt="Portfolio Website" class="project-img-placeholder" />
+                     <div class="card-overlay">
+                        <a href="https://portfolio-website-production-ab6a.up.railway.app" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>MyPortfolio</h3>
+                    <p class="project-desc">
+                        A personal portfolio web application designed to showcase my professional profile, resume, and projects in an organized way.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>Includes dedicated "About", "Projects", and "Contact" sections.</li>
+                        <li>Features a secure contact form to store queries or send emails directly.</li>
+                        <li>Serves as a centralized platform for recruiters to explore my work.</li>
+                    </ul>
+
+                    <div class="tech-stack-label">Technologies Used:</div>
+                    <div class="tech-stack">
+                        <span><i class="fab fa-java"></i> Java</span>
+                        <span><i class="fas fa-leaf"></i> Spring Boot</span>
+                        <span><i class="fas fa-database"></i> MySQL</span>
+                        <span><i class="fab fa-html5"></i> Thymeleaf</span>
+                        <span><i class="fas fa-server"></i> Spring MVC</span>
+                        <span><i class="fas fa-table"></i> JPA</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/Dheeraj1453/Portfolio-Website/tree/main/myPortfolio" target="_blank" class="btn-action github"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://portfolio-website-production-ab6a.up.railway.app/home" target="_blank" class="btn-action demo"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in-up" style="animation-delay: 0.2s;">
+                <div class="card-image">
+                    <img src="assets/images/college_attendace.png" alt="Attendance System" class="project-img-placeholder" />
+                    <div class="card-overlay">
+                        <span class="status-badge"> Not Live</span>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <h3>College Attendance System</h3>
+                    <p class="project-desc">
+                        A Spring Boot–based web application designed to streamline and automate the process of managing student attendance.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>Features role-based access for Admins and Teachers.</li>
+                        <li>Allows attendance tracking and report generation via web interface.</li>
+                        <li>Uses MySQL for robust data management and responsive frontend styling.</li>
+                    </ul>
+
+                    <div class="tech-stack-label">Technologies Used:</div>
+                    <div class="tech-stack">
+                        <span><i class="fab fa-java"></i> Java</span>
+                        <span><i class="fas fa-leaf"></i> Spring Boot</span>
+                        <span><i class="fab fa-html5"></i> HTML5</span>
+                        <span><i class="fas fa-server"></i> Spring MVC</span>
+                        <span><i class="fas fa-database"></i> JPA</span>
+                        <span><i class="fas fa-tools"></i> Workbench</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/Dheeraj1453/College_Attendance_Management_System" target="_blank" class="btn-action github"><i class="fab fa-github"></i> Code</a>
+                        <a href="#" class="btn-action demo disabled"><i class="fas fa-tools"></i> Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in-up">
+                <div class="card-image">
+                    <img src="assets/images/Currency-Converter.png" alt="Currency Converter" class="project-img-placeholder" />
+                    <div class="card-overlay">
+                        <a href="https://dheeraj1453.github.io/Currency-Converter/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Currency-Converter</h3>
+                    <p class="project-desc">
+                        A responsive currency converter built with HTML5, CSS3, and JavaScript that uses a free exchange-rate API to provide real-time and accurate currency conversions.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>Developed a responsive currency converter web application using HTML5, CSS3, and JavaScript with a clean and user-friendly UI.</li>
+                        <li>Integrated a free exchange rate API using fetch/async-await to provide real-time, accurate currency conversions across multiple currencies.</li>
+                        <li>Demonstrated strong frontend skills including API consumption, asynchronous JavaScript, DOM manipulation, and responsive design best practices.</li>
+                    </ul>
+                    
+                    <div class="tech-stack-label">Technologies Used:</div>
+                    <div class="tech-stack">
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                        <span><i class="fab fa-html5"></i> HTML5</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-github"></i> GitHub</span>
+                        <span><i class="fas fa-fire"></i> fetch APIs</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/Dheeraj1453/Currency-Converter" target="_blank" class="btn-action github"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://dheeraj1453.github.io/Currency-Converter/" target="_blank" class="btn-action demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
