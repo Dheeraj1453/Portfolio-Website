@@ -1,27 +1,26 @@
-# ===============================
-# Stage 1: Build the Application
-# ===============================
-FROM maven:3.8.5-openjdk-17 AS build
+# Stage 1: Build the application
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy the project files
-COPY . .
+# Copy pom.xml and download dependencies
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
 
-# Build the application (skipping tests to avoid env var errors during build)
+# Copy source and build
+COPY src ./src
 RUN mvn clean package -DskipTests
 
-# ===============================
-# Stage 2: Run the Application
-# ===============================
-FROM openjdk:17-jdk-slim
+# Stage 2: Runtime Environment
+FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 
-# Copy the Jar file from the build stage
-# We use a wildcard *.jar to match whatever version is in your pom.xml
-COPY --from=build /app/target/*.jar app.jar
+# Copy the jar from the build stage
+# Note: Filename matches <artifactId>-<version>.jar from your pom.xml
+COPY --from=build /app/target/myPortfolio-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose port 8080 (Render will map this automatically)
-EXPOSE 8080
+# Render uses port 10000 by default
+ENV PORT=10000
+EXPOSE 10000
 
-# Run the jar file
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run with the dynamic port assigned by Render
+ENTRYPOINT ["java", "-Dserver.port=${PORT}", "-jar", "app.jar"]
