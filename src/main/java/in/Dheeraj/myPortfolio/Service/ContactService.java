@@ -24,7 +24,6 @@ public class ContactService {
         
         contactRepository.save(message); // Save to Aiven Database
 
-        // Trigger the (now empty) method to signal completion
         emailService.sendEmail(contactDTO);
     }
 }

@@ -1,10 +1,7 @@
-// 1. Initialize EmailJS
-(function() {
-    emailjs.init("LEm-A_eAa8rPTgJhMwfmo"); 
-})();
-
 document.addEventListener('DOMContentLoaded', () => {
-    
+    // 1. Initialize EmailJS
+    emailjs.init("IScOIhbddC2ZWM2SP");
+
     /* HAMBURGER LOGIC */
     const menuBtn = document.getElementById('menu');
     const navbar = document.querySelector('.navbar');
@@ -39,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
             submitBtn.disabled = true;
 
-            //  Save to Aiven Database via Java
+            // Step A: Save to your Aiven Database via Java
             fetch('/contact/save', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -48,8 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-
-                    // Send the email via EmailJS
+                    // Step B: Send the email via EmailJS
                     return emailjs.send("service_vi34ifr", "template_qr471yr", {
                         from_name: formData.name,
                         reply_to: formData.email,
@@ -66,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => {
                 console.error("Error:", error);
-                alert("Something went wrong. Please try again.");
+                alert("Something went wrong. Please check the browser console.");
             })
             .finally(() => {
                 submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
@@ -74,4 +70,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-});
+}); // <--- All brackets are now correctly closed
