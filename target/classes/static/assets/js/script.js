@@ -1,11 +1,11 @@
 // 1. Initialize EmailJS
 (function() {
-    emailjs.init("YOUR_PUBLIC_KEY"); // GET THIS FROM EMAILJS DASHBOARD
+    emailjs.init("IScOIhbddC2ZWM2SP"); 
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    /* === KEEP YOUR HAMBURGER LOGIC === */
+    /* HAMBURGER LOGIC */
     const menuBtn = document.getElementById('menu');
     const navbar = document.querySelector('.navbar');
 
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* === UPDATED FORM LOGIC === */
+    /* FORM LOGIC */
     const contactForm = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
             submitBtn.disabled = true;
 
-            // Step A: Save to your Aiven Database via Java
+            //  Save to Aiven Database via Java
             fetch('/contact/save', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -48,8 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Step B: Send the email via EmailJS (Port 443 - Not Blocked)
-                    return emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+
+                    // Send the email via EmailJS
+                    return emailjs.send("service_vi34ifr", "template_qr471yr", {
                         from_name: formData.name,
                         reply_to: formData.email,
                         subject: formData.subject,
