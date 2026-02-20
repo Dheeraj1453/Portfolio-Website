@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
             menuBtn.classList.toggle('fa-times');
             navbar.classList.toggle('nav-toggle');
         });
-
         window.addEventListener('scroll', () => {
             menuBtn.classList.remove('fa-times');
             navbar.classList.remove('nav-toggle');
@@ -21,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* FORM LOGIC */
     const contactForm = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
+    const messageBox = document.querySelector('.res'); // The container for on-page messages
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -33,10 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: document.getElementById('message').value
             };
 
+            // UI State: Sending
             submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
             submitBtn.disabled = true;
+            if (messageBox) messageBox.innerHTML = '';
 
-            // Step A: Save to your Aiven Database via Java
+            // Step A: Save to Aiven Database
             fetch('/contact/save', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -53,21 +55,36 @@ document.addEventListener('DOMContentLoaded', () => {
                         message: formData.message
                     });
                 } else {
-                    throw new Error("DB Save Failed");
+                    throw new Error("Database Save Failed");
                 }
             })
             .then(() => {
-                alert("Success! Message saved to DB and Email sent.");
+                // SUCCESS: Update page text instead of alert
+                if (messageBox) {
+                    messageBox.innerHTML = `<p style="color: #00eeff; padding: 10px; font-size: 1.6rem;">
+                        <i class="fas fa-check-circle"></i> Success! Message sent successfully.
+                    </p>`;
+                }
                 contactForm.reset();
             })
             .catch(error => {
+                // ERROR: Update page text instead of alert
                 console.error("Error:", error);
-                alert("Something went wrong. Please check the browser console.");
+                if (messageBox) {
+                    messageBox.innerHTML = `<p style="color: #ff4d4d; padding: 10px; font-size: 1.6rem;">
+                        <i class="fas fa-exclamation-triangle"></i> Failed to send. Please try again.
+                    </p>`;
+                }
             })
             .finally(() => {
                 submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
                 submitBtn.disabled = false;
+
+                // Clear the message after 6 seconds
+                setTimeout(() => {
+                    if (messageBox) messageBox.innerHTML = '';
+                }, 6000);
             });
         });
     }
-}); // <--- All brackets are now correctly closed
+});
