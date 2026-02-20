@@ -12,16 +12,19 @@ public class ContactService {
     @Autowired
     private ContactRepository contactRepository;
 
+    @Autowired
+    private EmailService emailService; // Add this back
 
     public void saveMessage(ContactDTO contactDTO) {
-
-        // This ensures data is safe before we try to email
         ContactMessage message = new ContactMessage();
         message.setName(contactDTO.getName());
         message.setEmail(contactDTO.getEmail());
         message.setSubject(contactDTO.getSubject());
         message.setMessage(contactDTO.getMessage());
-        contactRepository.save(message);
+        
+        contactRepository.save(message); // Save to Aiven Database
 
+        // Trigger the (now empty) method to signal completion
+        emailService.sendEmail(contactDTO);
     }
 }
