@@ -12,8 +12,6 @@ public class ContactService {
     @Autowired
     private ContactRepository contactRepository;
 
-    @Autowired
-    private EmailService emailService; // Inject the new async service
 
     public void saveMessage(ContactDTO contactDTO) {
 
