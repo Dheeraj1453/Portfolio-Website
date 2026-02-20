@@ -25,7 +25,5 @@ public class ContactService {
         message.setMessage(contactDTO.getMessage());
         contactRepository.save(message);
 
-        // This triggers the background task and returns immediately
-        emailService.sendEmail(contactDTO);
     }
 }
