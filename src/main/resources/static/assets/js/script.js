@@ -1,6 +1,6 @@
 // 1. Initialize EmailJS
 (function() {
-    emailjs.init("IScOIhbddC2ZWM2SP"); 
+    emailjs.init("LEm-A_eAa8rPTgJhMwfmo"); 
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
